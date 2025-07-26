@@ -1,19 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
-  </head>
+
+<%- include("./layout/head") %>
+
   <body>
-    <%- include('./layout/header'); -%>
+    <%- include("./layout/nav") %>
 
-    <h1 class="index-title">我是首頁</h1>
-    <img src="../assets/images/dog.jpg" style="width: 300px;" alt="cat">
+      <main class="main bg-light">
+        <div class="content">
+          <div class="personal-data">
+            <%- include("./layout/tab") %>
+          </div>
+            <div class="bg-white rounded pb-5 shadow">
+              <div class="d-flex p-4  ">
+                <h1 class="title fw-medium fs-4 me-4">個人資料</h1>
+                <div class="main-form">
 
-    <%- include('./layout/footer'); -%>
+                  <div class="d-flex mb-4">
+                    <img class="big-avatar me-3" src="/assets/images/index/Profile Image.png" alt="cat">
+                    <div class="d-flex align-items-end">
+                      <button type="button" class="button bg-white ">
+                        <i class="bi bi-upload"></i>
+                        <span>
+                          更新頭貼
+                        </span>
+                      </button>
+                    </div>
+                  </div>
 
-    <script type="module" src="../main.js"></script>
+                  <div class="form-floating mb-4">
+                    <input type="text" class="form-control" id="name" placeholder="name@example.com" value="Mokumaru">
+                    <label for="name">姓名</label>
+                  </div>
+
+                  <h6 class="mb-2">性別</h6>
+                  <ul class="d-flex mb-4">
+                    <li>
+                      <div class="form-check me-4">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          女性
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check me-4">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          男性
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="form-check me-4">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          不願透露
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div class="form-floating mb-4">
+                    <input type="text" class="form-control" id="birthday" value="2000/01/10">
+                    <label for="birthday">生日</label>
+                  </div>
+
+                  <h6 class="mb-2">密碼</h6>
+                  <button type="button" class="button mb-4 bg-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <span>
+                      修改密碼
+                    </span>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+
+                  <div class="form-floating mb-4">
+                    <input type="email" class="form-control" id="email" value="mokumaru@mail.com">
+                    <label for="email">信箱</label>
+                    <div id="emailHelp" class="form-text text-secondary">
+                      盡量勿使用Yahoo或Hotmail郵件信箱，以免因擋信、漏信
+                    </div>
+                  </div>
+
+                  <div class="form-floating mb-4">
+                    <input type="tel" class="form-control" id="tel" value="09-1234-5678">
+                    <label for="tel">聯絡電話</label>
+                  </div>
+
+                  <div class="form-floating mb-4">
+                    <input type="text" class="form-control" id="address" value="高雄市三民區九如一路 87 號">
+                    <label for="address">通訊地址</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center">
+                <button type="button" class="btn rounded-pill btn-lg btn-outline-dark me-4">
+                  重新填寫
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+                <button type="button" class="btn rounded-pill btn-lg btn-dark">
+                  儲存更新
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+
+
+        </div>
+      </main>
+
+
+
+      <%- include("./layout/modal") %>
+
+      <%- include("./layout/footer") %>
+
+
+
+        <script type="module" src="../main.js"></script>
   </body>
+
 </html>

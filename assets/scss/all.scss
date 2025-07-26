@@ -1,5 +1,10 @@
-@import './layout/header.scss';
-@import './layout/footer.scss';
+@import "./layout/reset";
+@import "./layout/base";
+@import "./layout/helpers";
+@import "./layout/compoents";
+@import "./layout/font";
 
 
-@import './pages/index.scss';
+@import "./pages/career-plan.scss";
+@import "./pages/booking-record.scss";
+@import "./pages/index.scss";
